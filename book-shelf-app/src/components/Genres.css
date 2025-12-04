@@ -1,0 +1,178 @@
+/* Genres.css */
+.genres-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.genres-title {
+  text-align: center;
+  color: #f3f8f7;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+.genres-description {
+  text-align: center;
+  color: #7f8c8d;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+.genre-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 10px;
+}
+
+.genre-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  height: 100%;
+  border: 1px solid #eaeaea;
+}
+
+.genre-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  border-color: #3498db;
+}
+
+.genre-card:hover .genre-name {
+  color: #3498db;
+}
+
+.genre-image-container {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.genre-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.genre-card:hover .genre-image {
+  transform: scale(1.05);
+}
+
+.genre-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.genre-icon-fallback {
+  font-size: 3rem;
+  opacity: 0.3;
+}
+
+.genre-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.genre-name {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+  font-size: 1.3rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.genre-description {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.genre-link {
+  color: #3498db;
+  font-weight: 500;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-top: auto;
+  transition: transform 0.3s ease;
+}
+
+.genre-card:hover .genre-link {
+  transform: translateX(5px);
+}
+
+.genre-icon {
+  font-size: 4rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  .genre-list {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .genres-title {
+    font-size: 2rem;
+  }
+  
+  .genres-container {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .genre-list {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .genres-title {
+    font-size: 1.8rem;
+  }
+  
+  .genre-image-container {
+    height: 160px;
+  }
+}
+
+/* Анимация загрузки для изображений */
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.genre-image-loading {
+  background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+  background-size: 800px 104px;
+  animation: shimmer 1.5s infinite linear;
+}

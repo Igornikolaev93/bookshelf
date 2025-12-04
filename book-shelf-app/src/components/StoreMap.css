@@ -1,0 +1,228 @@
+/* components/StoreMap.css */
+.store-map-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.store-map {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+}
+
+.map-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 30px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  z-index: 1000;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.map-loading p {
+  margin: 10px 0 0 0;
+  color: #2c3e50;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.store-info-sidebar {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 320px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  border: 1px solid #e0e0e0;
+}
+
+.store-info-sidebar h3 {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  line-height: 1.3;
+}
+
+.store-info-sidebar p {
+  margin: 10px 0;
+  color: #34495e;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.store-info-sidebar strong {
+  color: #2c3e50;
+  min-width: 110px;
+  display: inline-block;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #7f8c8d;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+  font-weight: bold;
+}
+
+.close-btn:hover {
+  background-color: #f8f9fa;
+  color: #e74c3c;
+  transform: scale(1.1);
+}
+
+.sidebar-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.route-btn,
+.center-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.route-btn {
+  background: #3498db;
+  color: white;
+}
+
+.route-btn:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.center-btn {
+  background: #2ecc71;
+  color: white;
+}
+
+.center-btn:hover {
+  background: #27ae60;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(46, 204, 113, 0.3);
+}
+
+/* Кнопка сброса центра */
+.reset-center-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background: white;
+  color: #2c3e50;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.reset-center-btn:hover {
+  background: #3498db;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  .store-info-sidebar {
+    position: relative;
+    width: calc(100% - 40px);
+    margin: 20px auto;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+  }
+  
+  .store-map-container,
+  .store-map {
+    min-height: 400px;
+  }
+  
+  .reset-center-btn {
+    bottom: 10px;
+    left: 10px;
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .store-map-container,
+  .store-map {
+    min-height: 350px;
+  }
+  
+  .store-info-sidebar {
+    width: calc(100% - 20px);
+    margin: 10px;
+    padding: 15px;
+  }
+  
+  .sidebar-buttons {
+    flex-direction: column;
+  }
+  
+  .route-btn,
+  .center-btn {
+    padding: 10px;
+    font-size: 13px;
+  }
+}
