@@ -30,12 +30,12 @@ const PersonalAccount = ({ favorites, removeFromFavorites }) => {
                   <p>{book.author}</p>
                 </div>
               </div>
-              <button onClick={() => removeFromFavorites(book.id)}>Remove from favorites</button>
+              <button onClick={() => removeFromFavorites(book.id)}>Удалить из избранного</button>
             </li>
           ))}
         </ul>
       ) : (
-        <p>You have no favorite books yet.</p>
+        <p>Нет избранных книг</p>
       )}
     </div>
   );

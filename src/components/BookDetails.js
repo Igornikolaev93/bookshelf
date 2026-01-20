@@ -26,9 +26,6 @@ const BookDetails = ({ books }) => {
     console.log('Покупка книги:', book.title);
     console.log('Данные платежа:', paymentData);
     
-    // Здесь можно отправить данные на сервер
-    
-    // После успешной оплаты
     alert(`Спасибо за покупку "${book.title}"! Чек отправлен на ${paymentData.email || 'ваш email'}`);
     setIsModalOpen(false);
   };

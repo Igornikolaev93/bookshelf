@@ -117,7 +117,7 @@ function App() {
   };
 
   const handleStoreSelect = (store) => {
-    console.log('Выбран магазин:', store);
+    //console.log('Выбран магазин:', store);
     alert(`Выбран магазин: ${store.name}\nАдрес: ${store.address}\nТелефон: ${store.phone}`);
   };
 
@@ -202,6 +202,7 @@ function App() {
       {isAuthModalOpen && <AuthModal closeModal={closeAuthModal} onLogin={handleLogin} />}
     </div>
   );
+  
 }
 
 export default App;
